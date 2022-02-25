@@ -1,0 +1,105 @@
+@use "sass:math";
+
+#clock-container {
+  border-radius: 50%;
+  box-shadow: 0 0 0 clamp(4px, 1vw, 10px) var(--clock-color-accent),
+    0 12px 32px 4px hsla(0, 0%, 0%, 0.08), 0 24px 38px 4px hsla(0, 0%, 0%, 0.08);
+  color: #fff;
+  display: flex;
+  font-weight: 900;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  transition: 200ms ease-out all;
+
+  @media (orientation: landscape) {
+    height: 90vh;
+    width: 90vh;
+  }
+
+  @media (orientation: portrait) {
+    height: 90vw;
+    width: 90vw;
+  }
+}
+
+#clock-base {
+  position: absolute;
+  @include inset(0);
+  z-index: 2;
+
+  * {
+    position: relative;
+    transform-origin: 50%;
+    z-index: 10;
+  }
+}
+
+#clock-timer {
+  color: var(--clock-color-accent);
+  font-size: clamp(10px, calc(1em + 3vw), 4em);
+  font-weight: normal;
+  margin: 33% auto auto;
+  position: relative;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.clock-hand {
+  border-radius: 10px;
+  bottom: 50%;
+  filter: drop-shadow(0 0 2px rgba(#000, 0.4));
+  height: 196px;
+  left: 50%;
+  margin-left: -3px;
+  position: absolute;
+  transform-origin: bottom center;
+  transition: 300ms ease-out all;
+  width: 6px;
+}
+
+#clock-hand-hour {
+  z-index: 3;
+}
+
+#clock-hand-minute {
+  z-index: 2;
+}
+
+#clock-hand-second {
+  height: 40%;
+  margin-left: -1px;
+  width: 3px;
+  z-index: 1;
+}
+
+.clock-number {
+  @include inset(2rem);
+  color: var(--clock-color-accent);
+  font-size: clamp(1em, 3vw, 3em);
+  font-weight: 400;
+  position: absolute;
+  text-align: center;
+  z-index: 8;
+
+  @for $i from 1 to 12 {
+    &.n#{$i} {
+      transform: rotate($i * math.div(360, 12) * 1deg);
+    }
+  }
+
+  &.n12,
+  &.n3,
+  &.n6,
+  &.n9 {
+    @include inset(1rem);
+    color: #fff;
+    font-size: max(42px, 4vw);
+    font-weight: 900;
+  }
+
+  &.n6 {
+    transform: none;
+    top: auto;
+  }
+}

@@ -1,0 +1,12 @@
+.icon,
+.icon {
+  display: inline-block;
+  fill: currentColor;
+  stroke: currentColor;
+  line-height: 1;
+  stroke-width: 0;
+  transition-duration: 300ms;
+  transition-property: transform, fill, box-shadow;
+  transition-timing-function: ease;
+  width: var(--icon-size, 1em);
+}

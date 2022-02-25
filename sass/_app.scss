@@ -1,0 +1,9 @@
+body {
+  @include inset(0);
+  background: var(--clock-color);
+  display: flex;
+  font-family: 'rubik', sans-serif;
+  min-height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+  transition: 200ms ease-out background-color;
+}

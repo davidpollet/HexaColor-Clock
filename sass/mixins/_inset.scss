@@ -1,0 +1,26 @@
+@mixin inset($top, $right: null, $bottom: null, $left: null) {
+  @if (
+    $top ==
+      'skip' and
+      $right ==
+      'skip' and
+      $bottom ==
+      'skip' and
+      $left ==
+      'skip'
+  ) {
+    @error "At least one value should be different from \"skip\"";
+  }
+  @if ($top!= 'skip') {
+    top: $top;
+  }
+  @if ($right!= 'skip') {
+    right: if($right==null, $top, $right);
+  }
+  @if ($bottom!= 'skip') {
+    bottom: if($bottom==null, $top, $bottom);
+  }
+  @if (left!= 'skip') {
+    left: if($left==null, if($right==null, $top, $right), $left);
+  }
+}

@@ -1,0 +1,67 @@
+.app-description-toggle {
+  background-color: var(--clock-color);
+  border-radius: 50%;
+  border: 0;
+  box-shadow: inset 0 0 0 2px var(--clock-color-accent),
+    0 0 0 0 var(--clock-color-accent);
+  color: #fff;
+  display: flex;
+  font-size: 1.25rem;
+  font-weight: 700;
+  height: 2em;
+  margin-left: auto;
+  position: relative;
+  text-align: center;
+  transition: 200ms ease all;
+  width: 2em;
+  z-index: 2;
+
+  &:after {
+    @include inset(-0.25em);
+    content: '';
+    position: absolute;
+  }
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -0.5em;
+    margin-top: -0.5em;
+
+    &.icon-close {
+      opacity: 0.5;
+      transform: translateY(50%) scale(0);
+    }
+  }
+
+  &:hover,
+  &:focus-visible {
+    cursor: pointer;
+    box-shadow: inset 0 0 0 2px var(--clock-color-accent),
+      0 0 0 6px var(--clock-color-accent);
+  }
+
+  &:focus {
+    color: var(--clock-color);
+    background: #fff;
+  }
+}
+
+.app-description-toggle.is-open {
+  transform: translateY(-1em);
+  box-shadow: inset 0 0 0 2em var(--clock-color-accent),
+    0 0 0 0 var(--clock-color-accent);
+
+  .icon {
+    &.icon-info {
+      opacity: 0.5;
+      transform: translateY(50%) scale(0);
+    }
+
+    &.icon-close {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+}

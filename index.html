@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HexaColor Clock</title>
+  <link rel="shortcut icon"
+    href="data:image/svg+xml, %3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle id='dog' fill='%23000000' cx='50' cy='50' r='50' /%3E%3C/svg%3E">
+  <meta name="theme-color" content="#000000">
+
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/webfonts.css">
+
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://davidpollet.github.io/HexaColor-Clock/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="HexaColor Clock">
+  <meta property="og:description" content="
+      Cette horloge synchronise sa couleur avec l'heure fusionnée (#HHMMSS)
+    ">
+  <meta property="og:image" content="https://davidpollet.github.io/HexaColor-Clock/screenshot.png">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="davidpollet.github.io">
+  <meta property="twitter:url" content="https://davidpollet.github.io/HexaColor-Clock/">
+  <meta name="twitter:title" content="HexaColor Clock">
+  <meta name="twitter:description" content="
+      Cette horloge synchronise sa couleur avec l'heure fusionnée (#HHMMSS)
+    ">
+  <meta name="twitter:image" content="https://davidpollet.github.io/HexaColor-Clock/screenshot.png">
+
+  <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+
+</head>
+
+<body>
+  <div class="app-description">
+    <button class="app-description-toggle" aria-label="Afficher la description de l'application"
+      data-label-show="Afficher" data-label-hide="Masquer" aria-labelledby="description">
+      <span class="icon icon-info">i</span>
+      <span class="icon icon-close">×</span>
+    </button>
+
+    <div id="description" class="app-description-content" hidden>
+      <p>Cette horloge synchronise sa couleur avec l'heure fusionnée (#HHMMSS)</p>
+    </div>
+  </div>
+
+  <div id="clock-container">
+    <time datetime="" id="clock-timer"></time>
+    <div class="clock" aria-hidden>
+      <svg id="clock-base" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+        <line id="clock-hand-seconds" class="clock-hand" x1="249" y1="60" x2="250" y2="250" stroke="#fff"
+          stroke-width="3" stroke-linecap="round" />
+
+        <line id="clock-hand-minutes" class="clock-hand" x1="249" y1="100" x2="250" y2="250" stroke="#fff"
+          stroke-width="6" stroke-linecap="round" />
+
+        <line id="clock-hand-hours" class="clock-hand" x1="249" y1="140" x2="250" y2="250" stroke="#fff"
+          stroke-width="9" stroke-linecap="round" />
+
+        <circle id="clock-hands-clipper" cx="250" cy="250" r="10" fill="#000"
+          style="fill: var(--clock-color-accent);" />
+      </svg>
+
+      <div class="clock-numbers">
+        <span class="clock-number n1">1</span>
+        <span class="clock-number n2">2</span>
+        <span class="clock-number n3">3</span>
+        <span class="clock-number n4">4</span>
+        <span class="clock-number n5">5</span>
+        <span class="clock-number n6"><span>6</span></span>
+        <span class="clock-number n7">7</span>
+        <span class="clock-number n8">8</span>
+        <span class="clock-number n9">9</span>
+        <span class="clock-number n10">10</span>
+        <span class="clock-number n11">11</span>
+        <span class="clock-number n12">12</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/app-description.js"></script>
+  <script src="./js/body-100vh.js"></script>
+  <script src="./js/clock.js" type="module"></script>
+
+</body>
+
+</html>

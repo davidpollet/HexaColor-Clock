@@ -1,0 +1,35 @@
+.app-description {
+  @include inset(skip, 0, 0);
+  display: flex;
+  padding: 1em;
+  flex-direction: column;
+  position: absolute;
+  z-index: 2;
+}
+
+.app-description-content {
+  @include inset(skip, 0, 0);
+  animation: 200ms ease forwards;
+  background: rgba(#fff, 0.2);
+  border-radius: 0.5em 0.5em 0 0;
+  color: #fff;
+  margin-left: auto;
+  max-width: 60ch;
+  @include inset(skip, 2em, 0, 1em);
+  padding: 1em 0.75em;
+  position: absolute;
+
+  &:not([hidden]) {
+    animation-name: clipIn;
+  }
+
+  &.hidding {
+    animation-name: clipOut;
+    animation-direction: reverse;
+  }
+
+  p {
+    padding-right: 2rem;
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,23 @@
+@keyframes clipOut {
+  from {
+    opacity: 1;
+    clip-path: inset(50% 0 52% 100%);
+  }
+
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes clipIn {
+  from {
+    opacity: 1;
+    clip-path: inset(50% 0 52% 100%);
+  }
+
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
